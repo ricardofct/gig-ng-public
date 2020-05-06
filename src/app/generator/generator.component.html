@@ -1,0 +1,32 @@
+<div class="field">
+  <label class="label" for="character">CHARACTER</label>
+  <input id="character" [formControl]="control" (keyup)="validateInput();" />
+</div>
+
+<app-code [code]="code"></app-code>
+
+<div class="grid" [ngStyle]="{'grid-template-columns': gridColumnSize + ' auto'}">
+  <div>
+  </div>
+  <ng-container *ngFor="let row of grid; let i = index; let first = first">
+    <ng-container *ngIf="first">
+      <div *ngFor="let char of row; let j = index;">
+        <b>
+          {{ j }}
+        </b>
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let char of row; let j = index; let first = first">
+      <div *ngIf="first" [class.dark]="i % 2 === 0">
+        <b>
+          {{ i }}
+        </b>
+      </div>
+      <div [class.dark]="i % 2 === 0">
+        {{ char }}
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+
+<ng-container *ngIf="store$ | async"></ng-container>

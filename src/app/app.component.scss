@@ -1,0 +1,26 @@
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  li {
+    margin-right: 10px;
+    border: 1px solid lightseagreen;
+    border-radius: 4px;
+
+    a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: lightseagreen;
+      &:hover {
+        background-color: rgba(lightseagreen, 0.1);
+      }
+
+      &.active {
+        background-color: lightseagreen;
+        color: white;
+      }
+    }
+  }
+}
