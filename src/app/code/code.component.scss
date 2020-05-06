@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid lightseagreen;
+  border-radius: 4px;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+    background-color: red;
+    border-radius: 50%;
+    animation: dotAnimation 2s infinite;
+  }
+}
+
+@keyframes dotAnimation {
+  from {
+    background-color: red;
+  }
+  50% {
+    background-color: white;
+  }
+  to {
+    background-color: red;
+  }
+}

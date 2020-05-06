@@ -1,0 +1,31 @@
+<app-code [code]="code"></app-code>
+
+<form [formGroup]="form" (ngSubmit)="addPayment(form.value)">
+  <div class="field">
+    <label class="label" for="name">PAYMENT NAME</label>
+    <input id="name" formControlName="name" />
+  </div>
+  <div class="field">
+    <label class="label" for="ammount">AMMOUNT</label>
+    <input id="ammount" formControlName="ammount" type="number" />
+  </div>
+  <button type="submit">+ ADD</button>
+</form>
+
+<table>
+  <tr class="label">
+    <th class="nameCell">NAME</th>
+    <th>AMMOUNT</th>
+    <th>CODE</th>
+    <th>GRID</th>
+  </tr>
+  <tr *ngFor="let payment of payments">
+    <td class="nameCell">{{ payment.name }}</td>
+    <td>{{ payment.ammount }}</td>
+    <td>{{ payment.code }}</td>
+    <td>{{ payment.grid.length * payment.grid[0].length }}</td>
+  </tr>
+</table>
+
+
+<ng-container *ngIf="store$ | async"></ng-container>
